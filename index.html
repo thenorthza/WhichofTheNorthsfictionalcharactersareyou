@@ -6,6 +6,34 @@
     <title>คุณเป็นตัวละครหลักตัวไหนในฟิคของ the north</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        <head>
+    <style>
+       .description-box {
+    /* ใช้ width เป็น % เพื่อให้ยืดหยุ่นในมือถือ */
+    width: 90%; 
+    
+    /* ใช้ max-width เพื่อล็อคไม่ให้มันแผ่กว้างเกินไปเวลาดูใน iPad หรือคอม */
+    max-width: 500px; 
+    
+    margin: 20px auto;
+    text-align: left;
+    font-size: 16px; /* ขยับขนาดขึ้นนิดนึงเพื่อให้คนใช้ iPad อ่านง่าย */
+    line-height: 1.7;
+    
+    /* ส่วน Scroll */
+    height: 300px; /* iPad จอใหญ่ เราขยับความสูงกล่องขึ้นได้นิดหน่อย */
+    overflow-y: auto;
+    
+    background: rgba(215, 201, 178, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+        /* ถ้ามีคำสั่ง .description-box อันเก่าอยู่ ให้ลบอันเก่าออกแล้วใช้อันนี้แทนครับ */
+    </style>
+</head>
+
         body {
             font-family: 'Kanit', sans-serif;
             background-color: #1a1a1a; /* สีพื้นหลังดำเทา */
@@ -298,7 +326,7 @@
                     { t: "BB สวย ควีน ตัวแม่ หลงเธอเหมือนยังไม่สร่างอะ", p: {June:1, Kurt:-0.5, Flynn:-0.5, Matthew:-0.5, Keith:-0.5, Zayn:-0.5, Aran:-0.5, Jedi:-0.5, Lynce:-0.5, Khluen:-0.5, Pynn:-0.5, Quin:-0.5, Jayne:-0.5} },
                     { t: "BOW WOW เธอเปลี่ยนให้หมาป่า เป็นหมาปั๊ก say bow wow wow หมาป่าอะไรกัน ผมรักเธอคนเดียวนะเบบี๋", p: {Jedi:3, Matthew:2, Khluen:2} },
                     { t: "Watch your step ระวังตกหลุมรักผมนะครัช", p: {Jedi:1.5, Kurt:1.5} },
-                    { t: "Transformer", p: {Pynn:2, Kurt:2} },
+                    { t: "Transformer พระรองครับ เธอไปรักมันทำไมวะ มารักเราไม่ดีกว่าเหรอ ผมเป็นบัมเบิ้ลบีนะ", p: {Pynn:2, Kurt:2} },
                     { t: "ยังรักอยู่ไหม (stars.) ตอนนี้เหมือนใช้ชีวิตไปวัน ๆ มาก ความฝันที่เคยวาดไว้ก็ไม่เป็นจริง ไม่รู้ว่ายังรักสิ่งที่ทำอยู่ไหม", p: {Quin:3} },
                     { t: "หายใจทิ้ง อยากปล่อยใจไปกับชีวิต ใช้ชีวิตเรียบ ๆ ง่ายไม่คิดอะไรดูบ้าง I just wanna หายใจทิ้ง", p: {Jayne:1.5, Khluen:1, Keith:0.5} },
                     { t: "LIAR เธอร้ายอะ คุยกับฉันแต่เธอคิดถึงหน้าใคร ฉันหรือว่าใคร เธอมันร้ายอะ", p: {Flynn:1.5, Matthew:-0.5, June:-0.5, Keith:-0.5, Zayn:-0.5, Aran:-0.5, Jedi:-0.5, Lynce:-0.5, Khluen:-0.5, Pynn:-0.5, Quin:-0.5, Jayne:-0.5} },
