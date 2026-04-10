@@ -81,31 +81,39 @@
             text-align: left;
             margin-bottom: 30px;
         }
-
-        /* --- เพิ่มส่วนนี้สำหรับการแสดงผลบนมือถือ --- */
+/* --- แก้ไขส่วน @media เพื่อให้พอดีจอโทรศัพท์ที่สุด --- */
         @media (max-width: 600px) {
             .quiz-container {
-                padding: 20px 15px; /* ลดขอบด้านในกล่องให้บางลงในมือถือ */
-                border-radius: 12px;
+                padding: 15px 10px; /* ลดขอบด้านในให้บางลงเพื่อเพิ่มพื้นที่ข้อความ */
+                margin: 10px;       /* ป้องกันตัวกล่องติดขอบจอ */
             }
             h1 {
-                font-size: 22px; /* ลดขนาดหัวข้อ */
-                margin-bottom: 15px;
-            }
-            .subtitle {
-                font-size: 13px;
-                margin-bottom: 20px;
+                font-size: 20px;
+                margin-top: 10px;
             }
             .btn {
-                padding: 12px 15px; /* ลดขนาดปุ่มลงไม่ให้เทอะทะ */
-                font-size: 14px; /* ลดขนาดฟอนต์ในปุ่ม */
-                margin: 8px 0;
-            }
-            h2 {
-                font-size: 20px; /* ลดขนาดคำถาม */
-            }
-            .result-desc {
+                padding: 10px 12px;
                 font-size: 14px;
+                margin: 6px 0;
+            }
+            
+            /* จำกัดความสูงรูปไม่ให้ยาวเกินไปในมือถือ */
+            .result-image {
+                max-height: 250px; 
+                object-fit: contain; /* ป้องกันรูปเบี้ยว */
+                margin: 10px 0;
+            }
+
+            /* ทำให้ข้อความบรรยายมีขนาดคงที่และ Scroll ได้ในมือถือ */
+            .result-desc {
+                font-size: 13px;
+                height: 180px;      /* จำกัดความสูงกล่องข้อความ */
+                overflow-y: auto;   /* ให้ไถอ่านข้างในได้ */
+                background: rgba(255,255,255,0.05); /* ใส่พื้นหลังจางๆ ให้อ่านง่าย */
+                padding: 10px;
+                border-radius: 8px;
+            }
+        }
             }
         }
     </style>
