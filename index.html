@@ -3,75 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>คุณเป็นตัวละครหลักตัวไหนในฟิคของ the north</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Which of The North's fictional characters are you</title>
     <style>
-        /* เพิ่ม box-sizing เพื่อป้องกันไม่ให้กล่องล้นจอเวลาบวก padding */
-        * {
-            box-sizing: border-box;
-        }
-
+        /* ตั้งค่าพื้นหลังและฟอนต์ */
         body {
-            font-family: 'Kanit', sans-serif;
-            background-color: #1a1a1a; 
-            color: #e0e0e0; 
+            background-color: #1F1D20; /* สี Raisin Black จากพาเลทของคุณ */
+            color: #F5ECDC; /* สี Old Lace */
+            font-family: 'Sarabun', sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
             margin: 0;
-            padding: 15px; /* ลด padding นอกสุดลงนิดหน่อย */
+            padding: 20px;
         }
 
-        .quiz-container {
-            background-color: #2a2a2a; 
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 600px;
-            width: 100%;
+        .container {
+            max-width: 400px;
             text-align: center;
         }
 
-        h1, h2, h3 { color: #ffffff; }
-        
-        .subtitle {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .btn {
-            background-color: #444;
-            color: #fff;
-            border: 1px solid #555;
-            padding: 15px 20px;
-            margin: 10px 0;
-            border-radius: 8px;
-            font-size: 16px;
-            font-family: 'Kanit', sans-serif;
-            cursor: pointer;
+        img {
             width: 100%;
-            transition: all 0.3s ease;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* --- นี่คือส่วนของกล่องข้อความที่คุณต้องการ --- */
+        .description-box {
+            background: rgba(215, 201, 178, 0.1); /* สี Dun แบบโปร่งแสง */
+            padding: 20px;
+            border-radius: 12px;
+            height: 250px;    /* บังคับความสูงไว้เท่านี้ */
+            overflow-y: auto; /* ถ้าข้อความยาวเกินจะไถขึ้นลงได้ */
             text-align: left;
+            line-height: 1.6;
+            font-size: 15px;
+            border: 1px solid rgba(123, 115, 105, 0.3); /* เส้นขอบสี Dim Gray จางๆ */
         }
 
-        .btn:hover {
-            background-color: #666;
-            border-color: #888;
+        /* ปรับแต่งแถบเลื่อน (Scrollbar) ให้ดูสวย */
+        .description-box::-webkit-scrollbar {
+            width: 6px;
         }
-
-        .btn-center { text-align: center; background-color: #555; }
-        .btn-center:hover { background-color: #777; }
-
-        #quiz-screen, #result-screen { display: none; }
-
-        .result-image {
-            max-width: 100%;
+        .description-box::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .description-box::-webkit-scrollbar-thumb {
+            background: #7B7369; /* สี Dim Gray */
             border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
+    </style>
+</head>
+<body>
 
-        .result-
+    <div class="container">
+        <h2>คุณคือ Jedi จาก MVP</h2>
+        
+        <img src="jedi.png" alt="Jedi">
+
+        <div class="description-box">
+            ถ้าคุณได้คำตอบเป็น เจได แสดงว่า คุณขี้แอ็ค ล้อเล่น จริง ๆ แล้วคุณคือซามอยด์ขี้เล่นที่อารมณ์ดีอยู่ตลอดเวลาต่างหาก คุณชอบเล่นเกมแอ็คคนอื่น และคุณเล่นเกมเก่งมาก ๆ คุณเอนจอยกับการทำตัวแพรวพราวและมีความสุขสุด ๆ เวลาได้เดินหน้าจีบคนที่คุณสนใจ คุณมักจะคิดเสมอว่าตัวเองน่ะหล่อเท่ เทสต์ดนตรีของคุณเองก็เต็มไปด้วยแพรวพราวที่จะเอาไว้ใช้ Rizz คน คุณคงไม่พลาดที่จะส่งเพลง Adore ของ Yented ไม่ก็สักเพลงเสี่ยว ๆ ไปจีบเขาชัวร์ ๆ
+        </div>
+    </div>
+
+</body>
+</html>
