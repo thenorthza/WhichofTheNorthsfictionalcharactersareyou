@@ -76,7 +76,9 @@
     <div class="quiz-container">
         <div id="start-screen">
             <h1>คุณเป็นตัวละครหลักตัวไหนในฟิคของ the north</h1>
-            <p class="subtitle">This is just for fun! Personalities are based on characters. (นิสัยเป็นนิสัยของตัวละคร Don’t take it too seriously นะคะ)</p>
+            <p class="subtitle">
+This is just for fun! The personalities are based on the characters, so some traits might match you while
+others might not. (นิสัยเป็นนิสัยของตัวละคร อาจจะมีตรง คุณบ้าง ไม่ตรงบ้าง Don't take it too seriously นะคะ)/p>
             <button class="btn btn-center" onclick="startQuiz()">เริ่มทำแบบทดสอบ</button>
         </div>
 
@@ -131,54 +133,63 @@
                 q: "ข้อ 2: ถ้ามีคนตรงไทป์เข้ามาจีบคุณ แต่ไม่รู้จักเขา คุณจะทำอย่างไร",
                 a: [
                     { t: "ไม่ต้อง เดี๋ยวจีบเอง", p: {Jedi:4, Matthew:4, Kurt:4, Flynn:-1, Quin:-100} },
-                    { t: "จีบก็ได้ ความรักพัฒนาได้จากการทำความรู้จักกัน", p: {Pynn:3, Jayne:2, Kurt:2, Keith:2, Aran:2, Khluen:1} },
+                    { t: "จีบก็ได้ ยังไงความรักมันก็พัฒนาได้จากการทำความรู้จักกันอยู่แล้ว", p: {Pynn:3, Jayne:2, Kurt:2, Keith:2, Aran:2, Khluen:1} },
                     { t: "อย่ามายุ่ง อยากอยู่คนเดียว", p: {Quin:5, Flynn:2, Lynce:2, Jedi:-3} },
                     { t: "ไม่ติดหรอก อย่าเสียเวลา", p: {Lynce:3, Aran:3} },
-                    { t: "รู้สึกดีเล็กน้อย", p: {Khluen:3, Zayn:2} }
+                    { t: "รู้สึกดีเล็กน้อย ถึงแม้จะยังไม่ได้ตัดสินใจว่าให้จีบดีไหม", p: {Khluen:3, Zayn:2} }
                 ]
             },
             {
                 q: "ข้อ 3: คุณคิดยังไงกับความรัก",
                 a: [
-                    { t: "ความรักเป็นสิ่งสวยงาม แม้เสียใจก็ยังอยากมี", p: {Jayne:4, Khluen:3, Flynn:-1} },
-                    { t: "โสดดีกว่าถ้ามีรักแล้วลำบาก", p: {Quin:5, Flynn:3, Lynce:3, Jedi:-1} },
-                    { t: "ความฝันสำคัญกว่าการหาคนรัก", p: {Quin:5, Zayn:2, Kurt:-2, Jedi:-2} },
-                    { t: "ชีวิตขาดหวานไม่ได้ อยากมีคนให้กอดทุกวัน", p: {Jedi:3, Kurt:3, Matthew:2, June:2, Quin:-100} },
+                    { t: "ความรักเป็นสิ่งสวยงาม ถึงแม้จะมีเสียใจบ้าง คุณก็ยังตามหาความรักที่คุณสมควรจะได้รับอยู่ดี", p: {Jayne:4, Khluen:3, Flynn:-1} },
+                    { t: "ไม่ได้ดิ้นรนตามหาขนาดนั้น แต่มีก็ไม่ได้แย่", p: {Jayne:2, Keith:2, Aran:2, Flynn:1, Lynce:1, Pynn:1, Kurt:-2, Jedi:-2} },
+                    { t: "ยอมโสดดีกว่าถ้ามีความรักแล้วใช้ชีวิตลำบากกว่าเดิม", p: {Quin:5, Flynn:3, Lynce:3} },
+                    { t: "เพราะชีวิตขาดหวานไม่ได้ อยากมีคนให้หอมแก้มทุกวัน", p: {Jedi:3, Kurt:3, Matthew:2, June:2, Flynn:-2, Quin:-2, Lynce:-2, Zayn:-1, Keith:-1} },
                     { t: "มีก็ได้ ไม่มีก็ได้", p: {Keith:3, Zayn:2, Pynn:2} }
+                    { t: "ความฝันสำคัญกว่าการหาคนรัก", p: {Quin:5, Zayn:2, Kurt:-2, Jedi:-2} },
+               
                 ]
             },
             {
-                q: "ข้อ 4: วิธีที่คุณใช้เข้าหาคนที่ชอบ",
+                q: "ข้อ 4: คุณเลือกฟังเพลงของศิลปินท่านไหน",
                 a: [
-                    { t: "เอาตัวเองไปอยู่ในสายตา เล่นมุกจีบเดี๋ยวเขาก็รัก", p: {Jedi:3, Kurt:3, June:2} },
-                    { t: "ไม่อะ ก็เข้ามาหาเองสิ", p: {Flynn:2, Quin:2, Lynce:2, Aran:1, Jedi:-1} },
-                    { t: "ทำอะไรพิเศษๆ ให้ เช่นเขียนจดหมาย แชร์เพลง", p: {Kurt:2, Khluen:2, Zayn:2, Pynn:1} },
-                    { t: "ขอชอบอยู่ห่าง ๆ ดีกว่า กลัวทำลายความสัมพันธ์", p: {Keith:2, Jayne:1, Pynn:3.5} }
+                    { t: "Travis Scott, Kendrick Lamar, ฮิปฮอป", p: {Aran:4, Flynn:3} },
+                    { t: "Justin Bieber, Sombr", p: {Kurt:5, Flynn:5, Quin:3} },
+                    { t: "Oasis, The Beatles", p: {Keith:4, Zayn:4, Aran:-1, Kurt:-1, Flynn:-1} },
+                    { t: "Sabrina Carpenter, Ariana Grande, Katseye, Jennie", p: {June:3, Kurt:-1, Flynn:-1, Matthew:-1, Keith:-1, Zayn:-1, Aran:-1, Jedi:-1, Lynce:-1, Khluen:-1, Pynn:-1, Quin:-1, Jayne:-1} },
+                    { t: "เพลงไทยเก่า ๆ เพลงไทยความหมายดี", p: {Quin:2.5, Khluen:3} },
+                    { t: "ยังโอม, ยังต้า เพลงเสี่ยว ๆ เท่ๆ แอ็ค ๆ", p: {Jedi:4, Matthew:3, June:1} },
+                    { t: "เพลงสากลฟังสบาย ๆ แบบ Daniel Caesar, Frank Ocean, Wallows", p: {Zayn:3, Aran:1} },
+                    { t: "ฟังหมดอะ เข้าหูก็พอ", p: {Lynce:3, Jayne:1} },
+                    { t: "Rock n roll is da best", p: {Pynn:2, Quin:2, Kurt:-1, Flynn:-1, Matthew:-1, June:-1, Keith:-1, Zayn:-1, Aran:-1, Jedi:-1, Lynce:-1, Khluen:-1, Jayne:-1} }
                 ]
             },
             {
-                q: "ข้อ 5: เวลาว่างอยากทำอะไร",
+                q: "ข้อ 5: วิธีที่คุณใช้เข้าหาคนที่คุณชอบ",
                 a: [
-                    { t: "กิจกรรม Outdoor ไปทะเล เดินเล่น", p: {Khluen:2.5, Quin:-1} },
-                    { t: "แต่งเพลง แต่งหนังสือ ทำงานอดิเรกในห้อง", p: {Kurt:2, Flynn:2, Quin:3, Pynn:5} },
-                    { t: "เล่นเกมดิครับ ผมมันตัวตึง", p: {Matthew:3.5, Jedi:3.5, Lynce:1.5} },
-                    { t: "อ่านหนังสือ / ดูหนัง / ดูการ์ตูน", p: {Keith:1.5, Zayn:2, Aran:2.5} },
-                    { t: "ขอนอนเถอะ พักผ่อนดีที่สุด", p: {Quin:1, Jayne:1, Aran:1} }
+                    { t: "เอาตัวเองไปอยู่ในสายตาเขาบ่อย ๆ เล่นมุกจีบไปเดี๋ยวเขาก็รัก", p: {Jedi:3, Kurt:3, Matthew:1, June:2, Flynn:-0.5, Quin:-0.5, Keith:-0.5, Jayne:-0.5} },
+                    { t: "ไม่อะ ก็เข้ามาหาเองสิ", p: {Flynn:2, Quin:2, Lynce:2, Aran:1, Kurt:-0.5, Matthew:-0.5, June:-0.5, Keith:-0.5, Zayn:-0.5, Jedi:-0.5, Khluen:-0.5, Pynn:-0.5, Jayne:-0.5} },
+                    { t: "ทำอะไรพิเศษ ๆ ให้ เช่นซื้อดอกไม้ แต่งเพลงให้เขา เขียนจดหมายรัก แชร์เพลงให้ฟัง", p: {Kurt:2.5, Khluen:2, Zayn:2, Flynn:1, Keith:1, Pynn:1} },
+                    { t: "ขอชอบอยู่ห่าง ๆ ดีกว่า ไม่กล้าเข้าหาคนอื่น", p: {Keith:2, Jayne:1, Pynn:0.5} },
+                    { t: "บอกเขาไปเลยว่าชอบนะ ถ้าไม่บอกแล้วเขาจะรู้ไหมล่ะ", p: {Matthew:2, Jedi:2, Kurt:4, June:1.5, Zayn:1} }
                 ]
             },
             {
-                q: "ข้อ 6: คุณคือ...",
+                q: "ข้อ 6: เวลาว่างอยากทำอะไร",
                 a: [
-                    { t: "เมะ/เคะต๊อง หรือคนสวย", p: {Kurt:1, June:1} },
-                    { t: "หนอนหนังสือ หรือ Cinephile", p: {Keith:1.5, Zayn:1.5} },
-                    { t: "เมะขี้วีน หรือ อวตาร", p: {Lynce:1.5, Aran:1} },
-                    { t: "หมาป่า เมะเสี่ยว หรือลูกหมา", p: {Jedi:1, Khluen:1} },
-                    { t: "คนที่เธอไม่รัก ขอเป็นเพื่อนพระเอกละกัน", p: {Pynn:2.5} },
-                    { t: "คนที่รำคาญเมะ", p: {Quin:2, Aran:1} },
-                    { t: "คนรักแมว", p: {Jayne:1.5} }
+                    { t: "หากิจกรรม outdoor ทำ เช่นไปทะเล เดินเล่น ดีกว่านอนเฉย ๆ อยู่บ้าน", p: {Khluen:2.5, Quin:-1, Jayne:1} },
+                    { t: "แต่งเพลง แต่งหนังสือ ทำงานอดิเรกที่ชอบอยู่ในห้องนี่แหละดีแล้ว", p: {Kurt:2, Flynn:2, Quin:2.5, Khluen:-2, Zayn:1, Pynn:1} },
+                    { t: "นอนกอดแฟน", p: {Kurt:1, Jedi:1, Khluen:1, June:1, Quin:-0.5} },
+                    { t: "เล่นเกมดิครับ ผมมันตัวตึงอยู่ละ", p: {Matthew:3.5, Jedi:3.5, Lynce:1.5, Kurt:-0.5, Flynn:-0.5, June:-0.5, Keith:-0.5, Zayn:-0.5, Aran:-0.5, Khluen:-0.5, Pynn:-0.5, Quin:-0.5, Jayne:-0.5} },
+                    { t: "อ่านหนังสือ ไม่ว่าจะนิยายหรือหนังสือเรียน อ่านหมดอะ ขอแค่ได้ใช้เวลากับหนังสือก็พอ", p: {Keith:1.5} },
+                    { t: "มีเวลาพักเหนื่อยทั้งที ขอนอนเถอะ", p: {Quin:1, Jayne:1, Aran:1, Lynce:1} },
+                    { t: "ดูหนัง ขอดูหนังจนกว่าจะตาแฉะ", p: {Zayn:2.5} }
+                    { t: "ดูการ์ตูนครับ ผมโตมากับการ์ตูน", p: {Aran:3} }
                 ]
             },
             {
+        
              q: "ข้อ 7: คุณคิดว่าคุณเหมือนอะไร",
                 a: [
                     { t: "หม๋า", p: {Matthew:2.5, Khluen:2} },
