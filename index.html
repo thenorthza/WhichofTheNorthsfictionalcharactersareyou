@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; }
-
         body {
             font-family: 'Kanit', sans-serif;
             background-color: #1a1a1a; 
@@ -19,69 +18,56 @@
             margin: 0;
             padding: 15px;
         }
-
         .quiz-container {
             background-color: #2a2a2a; 
-            padding: 40px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             max-width: 600px;
             width: 100%;
             text-align: center;
         }
-
-        h1, h2, h3 { color: #ffffff; }
-        .subtitle { font-size: 14px; color: #888; margin-bottom: 30px; font-weight: 300; }
-
+        h1 { font-size: 22px; margin-bottom: 10px; color: #ffffff; }
+        h2 { font-size: 18px; margin-bottom: 20px; color: #ffffff; line-height: 1.4; }
+        .subtitle { font-size: 13px; color: #888; margin-bottom: 30px; font-weight: 300; line-height: 1.5; }
         .btn {
-            background-color: #444;
+            background-color: #3d3d3d;
             color: #fff;
             border: 1px solid #555;
             padding: 15px 20px;
             margin: 10px 0;
-            border-radius: 8px;
-            font-size: 16px;
+            border-radius: 10px;
+            font-size: 15px;
             font-family: 'Kanit', sans-serif;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             text-align: left;
+            line-height: 1.5;
+            display: block;
         }
-
-        .btn:hover { background-color: #666; border-color: #888; }
-        .btn-center { text-align: center; background-color: #555; }
-
+        .btn:hover { background-color: #505050; border-color: #888; }
+        .btn-center { text-align: center; background-color: #555; font-weight: 600; }
         #quiz-screen, #result-screen { display: none; }
-
-        /* คุมขนาดรูปผลลัพธ์ */
         .result-image {
             max-width: 100%;
             max-height: 280px; 
             object-fit: contain;
             border-radius: 10px;
             margin: 15px 0;
+            background: #000;
         }
-
-        /* คุมขนาดกล่องบรรยายผลลัพธ์ */
         .result-desc {
             font-size: 15px;
             line-height: 1.6;
             color: #ccc;
             text-align: left;
             margin-bottom: 20px;
-            max-height: 200px; 
+            max-height: 250px; 
             overflow-y: auto; 
             padding: 15px;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.3);
             border-radius: 8px;
-        }
-
-        @media (max-width: 600px) {
-            .quiz-container { padding: 20px 15px; }
-            h1 { font-size: 20px; }
-            .btn { padding: 12px 15px; font-size: 14px; }
-            .result-image { max-height: 220px; }
-            .result-desc { font-size: 13.5px; max-height: 170px; }
         }
     </style>
 </head>
@@ -90,7 +76,7 @@
     <div class="quiz-container">
         <div id="start-screen">
             <h1>คุณเป็นตัวละครหลักตัวไหนในฟิคของ the north</h1>
-            <p class="subtitle"> This is just for fun! The personalities are based on the characters, so some traits might match you while others might not. (นิสัยเป็นนิสัยของตัวละคร อาจจะมีตรงคุณบ้าง ไม่ตรงบ้าง Don’t take it too seriously นะคะ) </p>
+            <p class="subtitle">This is just for fun! The personalities are based on the characters, so some traits might match you while others might not. (นิสัยเป็นนิสัยของตัวละคร อาจจะมีตรงคุณบ้าง ไม่ตรงบ้าง Don’t take it too seriously นะคะ)</p>
             <button class="btn btn-center" onclick="startQuiz()">เริ่มทำแบบทดสอบ</button>
         </div>
 
@@ -101,7 +87,7 @@
 
         <div id="result-screen">
             <h2 id="result-title"></h2>
-            <img id="result-image" src="" alt="ภาพผลลัพธ์" class="result-image">
+            <img id="result-image" src="" alt="Result" class="result-image">
             <div id="result-desc" class="result-desc"></div>
             <button class="btn btn-center" onclick="location.reload()">เล่นอีกครั้ง</button>
         </div>
@@ -111,7 +97,7 @@
         let scores = {
             "Kurt": 0.0001, "Flynn": 0.0002, "Matthew": 0.0003, "June": 0.0004, 
             "Keith": 0.0005, "Zayn": 0.0006, "Aran": 0.0007, "Jedi": 0.0008, 
-            "Lynce": 0.0009, "Khluen": 0.0010, "Pynn": 0.0011, "Quin": 0.0112, "Jayne": 0.0113
+            "Lynce": 0.0009, "Khluen": 0.0110, "Pynn": 0.0111, "Quin": 0.0112, "Jayne": 0.0113
         };
 
         const resultsData = {
@@ -125,7 +111,7 @@
             "Jedi": { title: "คุณคือ Jedi จาก MVP", img: "jedi.png", desc: "ถ้าคุณได้คำตอบเป็น เจได แสดงว่า คุณขี้แอ็ค ล้อเล่น จริง ๆ แล้วคุณคือซามอยด์ขี้เล่นที่อารมณ์ดีอยู่ตลอดเวลาต่างหาก คุณชอบเล่นเกมแอ็คคนอื่น และคุณเล่นเกมเก่งมาก ๆ คุณเอนจอยกับการทำตัวแพรวพราวและมีความสุขสุด ๆ เวลาได้เดินหน้าจีบคนที่คุณสนใจ คุณมักจะคิดเสมอว่าตัวเองน่ะหล่อเท่ เทสต์ดนตรีของคุณคงเต็มไปด้วยเพลงรักที่เอาไว้ใช้ Rizz (หว่านเสน่ห์) ใส่คนอื่นแน่ ๆ ถ้าคุณชอบใครสักคน คุณคงไม่พลาดที่จะส่งเพลง Adore ของ Yented ไม่ก็สักเพลงเสี่ยว ๆ ไปจีบเขาชัวร์ ๆ คุณคงร้องแก้มเธอคงจะหอมขอหอมหน่อยจีบอีกฝ่ายทั้งวัน คุณเป็นคนคารมดีเลยฮอตมาก แต่ถึงอย่างนั้นคุณก็รักเดียวใจเดียวนะ รักใครรักจริง ถึงจะชอบทำตัวอ้อนพันแข้งพันขาคนที่ชอบไปบ้าง แต่รับรองได้เลยว่าคุณน่ะคลั่งรักสุดๆ" },
             "Lynce": { title: "คุณคือ Lynce จาก MVP", img: "lynce.png", desc: "โห ยอมเลย คุณเป็นเคะขี้วีนและค่อนข้างฟ้าวเป้งอยู่พอตัว คุณเป็นคนใช้ชีวิตไปวัน ๆ ไม่สนใจว่าใครจะมาจีบและไม่สนใจไปจีบใคร ถ้ามีคนมาจีบคุณล่ะก็ คุณคงไม่รู้ตัวจนกว่าเขาจะชัดเจน เห็นคุณวีน ๆ แบบนี้แต่คุณก็มีความน่าเอ็นดูในสายตาของคนที่ชอบคุณเสมอแหละ คุณเป็นคนตามใจคนอื่นนะ แต่ขอให้ได้บ่นก่อนเถอะ จะให้ตามใจอะไรนักหนาล่ะวะ เห็นตามใจเก่งแต่คุณก็งอนเก่งนะ ใครแย่งของกินคุณก็จะงอน คิดมากเก่งด้วย ครบสูตรเลยแหละ" },
             "Khluen": { title: "คุณคือ Khluen จาก Sunset", img: "khluen.png", desc: "คุณคือเจ้าหมาโกลเด้นรีทรีฟเวอร์ที่มีพลังงานล้นเหลือ คุณมีความน่ารักน่าเอ็นดูแผ่ออกมาแบบไม่รู้ตัว เป็นคนเก่ง เข้มแข็ง และมีมุมมองการใช้ชีวิตในแง่ดี มักเป็นพลังบวกคอยชาร์จแบตให้คนรอบข้าง คุณแคร์ครอบครัวมากและอยากให้ทุกคนสบายใจเมื่อได้อยู่กับคุณ ถ้ามีใครกำลังเศร้า คุณก็คงรีบพุ่งเข้าไปปลอบและอยากทำให้เขากลับมาอารมณ์ดีขึ้น คุณนี่แหละคือ ”เมะลูกหมา“ ในอุดมคติของใครหลายๆ คนเลยเชียวล่ะ (และสิ่งสำคัญที่สุดก็คือ... คุณสามารถร้องเพลง ดอกกระเจียวบาน ได้เป๊ะทุกท่อน)" },
-            "Pynn": { title: "คุณคือ Pynn จาก TILLDAWN", img: "pynn.png", desc: "คุณคือ พิณ แห่งวงยันหว่าง นี่มันพระรองในชีวิตจริงชัด ๆ คุณเป็นคนที่ไม่ค่อยเห็นค่าความรู้สึกของตัวเองเท่าไหร่นักc]tมักจะยกให้ความรู้สึกของคนที่คุณชอบมาเป็นอันดับ 1 เสมอ ภายนอกคุณดูเหมือนจะเป็นคนเข้มแข็งนะ แต่ถ้าคนที่คุณแอบชอบเขาไปมีใจให้คนอื่น คุณก็คงเศร้าไม่ต่างจากเพลง “ใจเหลือเหลือ” ของวง Dr.Fuu เลย เห็นคุณดูมูฟออนง่าย ยอมหลีกทางให้เขาไปรักคนอื่นได้แบบนี้ แต่ลึกๆ ในใจคุณก็ยังแอบหวังอยู่แหละ เพียงแค่คุณคิดว่ามันเป็นไปไม่ได้แล้วต่างหากคุณก็เลยเลือกที่จะปลงและถอยออกมา" },
+            "Pynn": { title: "คุณคือ Pynn จาก TILLDAWN", img: "pynn.png", desc: "คุณคือ พิณ แห่งวงยันหว่าง นี่มันพระรองในชีวิตจริงชัด ๆ คุณเป็นคนที่ไม่ค่อยเห็นค่าความรู้สึกของตัวเองเท่าไหร่นัก และมักจะยกให้ความรู้สึกของคนที่คุณชอบมาเป็นอันดับ 1 เสมอ ภายนอกคุณดูเหมือนจะเป็นคนเข้มแข็งนะ แต่ถ้าคนที่คุณแอบชอบเขาไปมีใจให้คนอื่น คุณก็คงเศร้าไม่ต่างจากเพลง “ใจเหลือเหลือ” ของวง Dr.Fuu เลย เห็นคุณดูมูฟออนง่าย ยอมหลีกทางให้เขาไปรักคนอื่นได้แบบนี้ แต่ลึกๆ ในใจคุณก็ยังแอบหวังอยู่แหละ เพียงแค่คุณคิดว่ามันเป็นไปไม่ได้แล้วต่างหากคุณก็เลยเลือกที่จะปลงและถอยออกมา" },
             "Quin": { title: "คุณคือ Quin จาก TILLDAWN", img: "quin.png", desc: "คุณคือ ควินน์ แห่งวงยันหว่าง คุณเป็นคนฝันให้ไกลไปให้ถึง เป็นคนที่ค่อนข้างจริงจังกับชีวิตและอยู่คนเดียวได้สบายเลยล่ะ คุณทุ่มเทให้กับความฝันของตัวเองมาก ๆ และอยากจะเก่งในหลาย ๆ ด้าน เพราะคุณอยากเป็นคนที่ได้รับการยอมรับและอยากเป็นคนเก่ง คุณน่ะเป็นคนที่อารมณ์ค่อนข้างอ่อนไหวง่ายแต่คุณมักจะไม่ชอบแสดงความอ่อนแอให้คนอื่นรับรู้ งอแงนิดหน่อยตามประสาเคะซึน คุณรักที่จะฝันและเอนจอยกับการได้ลงมือทำตามเป้าหมาย เลยไม่ได้สนใจพวกเมะเท่าไหร่ คุณไม่ใช่คนที่จะหมดไฟกับอะไรง่าย ๆ (เก่งมาก) และคุณเป็นคนใจแข็งพอสมควร โกรธแล้วโกรธนานเลยล่ะ " },
             "Jayne": { title: "คุณคือ Jayne จาก Daily dose of you", img: "jayne.png", desc: "คุณเป็นคนใจดี และคุณเป็นคนมีเหตุผล คุณมีความมั่นคงในเรื่องของความรักมาก ๆ ถ้าต้องเสียใจก็จะเจ็บหนักมาก แต่ถ้ารักใครก็จะรักหมดหัวใจเช่นกัน เพราะคุณเกลียดและไม่ชอบการจากลาเลยสักนิด คุณจะพยายามทำอย่างดีที่สุดเพื่อที่จะรักษาความสัมพันธ์และใครสักคนไว้ในชีวิตให้ได้ และนอกจากนี้ คุณยังเป็นมิตรกับสิ่งมีชีวิตทุกตัวบนโลกใบนี้โดยเฉพาะแมวเหมียว คุณพร้อมจะเกาคางแมวทุกตัวบนโลก" }
         };
@@ -189,10 +175,10 @@
                 q: "ข้อ 6: เวลาว่างอยากทำอะไร",
                 a: [
                     { t: "หากิจกรรม outdoor ทำ เช่นไปทะเล เดินเล่น ดีกว่านอนเฉย ๆ อยู่บ้าน", p: {Khluen:2.5, Quin:-1, Jayne:1} },
-                    { t: "แต่งเพลง แต่งหนังสือ ทำงานอดิเรกที่ชอบอยู่ในห้องนี่แหละดีแล้ว", p: {Kurt:2, Flynn:2, Quin:3, Khluen:-2, Zayn:1, Pynn:/5} },
+                    { t: "แต่งเพลง แต่งหนังสือ ทำงานอดิเรกที่ชอบอยู่ในห้องนี่แหละดีแล้ว", p: {Kurt:2, Flynn:2, Quin:3, Khluen:-2, Zayn:1, Pynn:5} },
                     { t: "นอนกอดแฟน", p: {Kurt:1, Jedi:1, Khluen:1, June:1, Quin:-0.5} },
                     { t: "เล่นเกมดิครับ ผมมันตัวตึงอยู่ละ", p: {Matthew:3.5, Jedi:3.5, Lynce:1.5, Kurt:-0.5, Flynn:-0.5, June:-0.5, Keith:-0.5, Zayn:-0.5, Aran:-0.5, Khluen:-0.5, Pynn:-0.5, Quin:-0.5, Jayne:-0.5} },
-                    { t: "อ่านหนังสือ ไม่ว่าจะนิยายหรือหนังสือเรียน อ่านหมดอะ ขอแค่ได้ใช้เวลากับหนังสือก็พอ", p: {Keith:1.5} },
+                    { t: "อ่านหนังสือ ไม่ว่าจะนิยายหรือหนังสือเรียน อ่านหมดอะ", p: {Keith:1.5} },
                     { t: "มีเวลาพักเหนื่อยทั้งที ขอนอนเถอะ", p: {Quin:1, Jayne:1, Aran:1, Lynce:1} },
                     { t: "ดูหนัง ขอดูหนังจนกว่าจะตาแฉะ", p: {Zayn:2.5} }
                 ]
@@ -243,7 +229,7 @@
                 ]
             },
             {
-                q: "ข้อ 12: คุณคิดว่าเพลง BUS เพลงไหน describes ตัวคุณ/ความรู้สึกของคุณได้ดีที่สุด",
+                q: "ข้อ 12: คุณคิดว่าเพลง BUS เพลงไหน describes ตัวคุณได้ดีที่สุด",
                 a: [
                     { t: "คับเฮีย ผมเป็นคนตลก ชอบปั่นครับ อยากพักจากงานบ้างอะ แต่ไหนขอจุ๊บเธอสักทีให้หายเหนื่อยหน่อยสิ้", p: {Matthew:0.5} },
                     { t: "so blue T ^ T แง เธออย่าหักอกเค้าเลยนะ มาตื๊อแล้วเนี่ย มองเค้าเป็นแมวหน่อย ไม่ใช่เสือหรอกคับ", p: {Kurt:2, Jedi:2, Matthew:1.5} },
