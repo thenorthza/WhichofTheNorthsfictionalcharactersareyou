@@ -8,29 +8,20 @@
     <style>
         <head>
     <style>
-       .description-box {
-    /* ใช้ width เป็น % เพื่อให้ยืดหยุ่นในมือถือ */
-    width: 90%; 
-    
-    /* ใช้ max-width เพื่อล็อคไม่ให้มันแผ่กว้างเกินไปเวลาดูใน iPad หรือคอม */
-    max-width: 500px; 
-    
-    margin: 20px auto;
-    text-align: left;
-    font-size: 16px; /* ขยับขนาดขึ้นนิดนึงเพื่อให้คนใช้ iPad อ่านง่าย */
-    line-height: 1.7;
-    
-    /* ส่วน Scroll */
-    height: 300px; /* iPad จอใหญ่ เราขยับความสูงกล่องขึ้นได้นิดหน่อย */
-    overflow-y: auto;
-    
-    background: rgba(215, 201, 178, 0.1);
-    padding: 20px;
-    border-radius: 12px;
+   .description-box {
+    width: 90% !important; 
+    max-width: 500px !important; 
+    height: 250px !important; /* บังคับความสูง */
+    overflow-y: auto !important; /* บังคับให้ไถได้ */
+    margin: 20px auto !important;
+    padding: 20px !important;
+    background: rgba(215, 201, 178, 0.15) !important;
+    border-radius: 12px !important;
+    display: block !important; /* มั่นใจว่ามันโชว์เป็นบล็อก */
+    box-sizing: border-box !important; /* สำคัญ: ป้องกันกล่องบวมจนล้นจอ */
 }
 
-
-        /* ถ้ามีคำสั่ง .description-box อันเก่าอยู่ ให้ลบอันเก่าออกแล้วใช้อันนี้แทนครับ */
+       
     </style>
 </head>
 
